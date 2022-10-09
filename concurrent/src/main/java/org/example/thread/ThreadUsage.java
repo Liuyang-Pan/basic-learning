@@ -15,7 +15,7 @@ public class ThreadUsage {
     /**
      * 继承线程类的方式创建线程
      */
-    class ThreadExtends extends Thread {
+    static class ThreadExtends extends Thread {
         @Override
         public void run() {
             log.info("继承线程");
