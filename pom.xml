@@ -26,7 +26,9 @@
         <junit.version>5.7.2</junit.version>
         <jcip.version>1.0</jcip.version>
         <lombok.version>1.18.24</lombok.version>
-        <slf4j.version>2.0.3</slf4j.version>
+        <slf4j.version>1.7.25</slf4j.version>
+        <slf4j.simple.version>2.0.3</slf4j.simple.version>
+        <logback.version>1.2.11</logback.version>
     </properties>
 
     <dependencyManagement>
@@ -65,7 +67,13 @@
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-simple</artifactId>
-                <version>${slf4j.version}</version>
+                <version>${slf4j.simple.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
                 <scope>test</scope>
             </dependency>
         </dependencies>
