@@ -21,6 +21,8 @@ public class TwoPhaseTermination {
                 Thread currentThread = Thread.currentThread();
                 //正常运行状态被打断
                 if (currentThread.isInterrupted()) {
+                    //会重置为false
+                    Thread.interrupted();
                     //通知停止之后允许的事情
                     log.info("things to run after notification stops");
                     break;

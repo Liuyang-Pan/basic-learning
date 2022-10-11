@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.LockSupport;
 
 /**
  * purpose:线程常用方法
@@ -242,6 +243,8 @@ public class ThreadCommonMethod {
 
     /**
      * interrupt详解使用：interrupt可以打断正在运行的或者是阻塞状态（这三种方法也会阻塞sleep、wait、join）的线程
+     * isInterrupted() 判断打断标记（不会清除打断标记-重置为false）
+     * static interrupted() 判断打断标记（清除打断标记-重置为false）
      */
     @Test
     public void interruptUsage() throws InterruptedException {
@@ -280,6 +283,28 @@ public class ThreadCommonMethod {
     }
 
     /**
+     * 配合park使用interrupted()判断方法
+     */
+    @Test
+    public void staticInterruptedUsage() throws InterruptedException {
+        Thread threadPark = new Thread(() -> {
+            log.info("start execution Thread-Park.LockSupport.park()...");
+            //park会让正在运行的线程暂停运行
+            LockSupport.park();
+            //调用了interrupted()后会将状态重置为false，若是调用isInterrupted()为true的时候，再次执行park会使park失效，所以结合interrupted使用
+            log.info("First park after... | interrupt status:{}", Thread.interrupted());
+            log.info("Thread.interrupted() after... | interrupt status:{}", Thread.currentThread().isInterrupted());
+            LockSupport.park();
+            log.info("Second park after...");
+        }, "Thread-Park");
+
+        threadPark.start();
+        TimeUnit.SECONDS.sleep(2);
+        //打断park
+        threadPark.interrupt();
+    }
+
+    /**
      * Two Phase Termination 设计模式：两阶段终止模式(interrupt的优雅实现）
      * 在一个线程T1中，终止线程T2做到优雅的终止线程T2，这里所谓的“优雅”，指的是给T2一个机会料理后事，而不是被一剑封喉。
      * 错误思路：
@@ -295,6 +320,17 @@ public class ThreadCommonMethod {
         twoPhaseTermination.start();
         TimeUnit.MILLISECONDS.sleep(5000);
         twoPhaseTermination.stop();
+    }
+
+    /**
+     * 不推荐使用的方法，这些方法已过时，容易破坏同步代码块，造成线程死锁
+     * stop & suspend & resume
+     * stop():停止线程运行
+     * suspend:挂起（暂停)线程运行
+     * resume:恢复线程运行
+     */
+    public void stopAndSuspendAndResume() {
+
     }
 
     /**
