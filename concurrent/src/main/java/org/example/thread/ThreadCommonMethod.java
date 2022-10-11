@@ -280,6 +280,24 @@ public class ThreadCommonMethod {
     }
 
     /**
+     * Two Phase Termination 设计模式：两阶段终止模式(interrupt的优雅实现）
+     * 在一个线程T1中，终止线程T2做到优雅的终止线程T2，这里所谓的“优雅”，指的是给T2一个机会料理后事，而不是被一剑封喉。
+     * 错误思路：
+     * Java语言的Thread类中曾经提供了一个stop()方法，用来终止线程，可是早已不建议使用了，原因是这个方法用的就是一剑封喉的做法，被终止的线程没有机会料理后事。
+     * 1、使用线程对象的stop()方法停止线程
+     * stop方法会真正杀死线程，如果这时线程锁住了共享资源，那么当它被杀死后就再也没有机会释放锁，其它线程将永远无法获取锁
+     * 2、使用System.exit(int)方法停止线程
+     * 目的仅是停止一个线程，但这种做法会让整个程序都停止
+     */
+    @Test
+    public void twoPhaseTermination() throws InterruptedException {
+        TwoPhaseTermination twoPhaseTermination = new TwoPhaseTermination();
+        twoPhaseTermination.start();
+        TimeUnit.MILLISECONDS.sleep(5000);
+        twoPhaseTermination.stop();
+    }
+
+    /**
      * while(true)时通过睡眠一会儿防止CPU占满
      */
     public static void main(String[] args) throws InterruptedException {
