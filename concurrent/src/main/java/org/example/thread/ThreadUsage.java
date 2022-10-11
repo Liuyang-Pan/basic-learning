@@ -4,7 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
 /**
- * purpose:
+ * purpose:创建线程的基础使用方式
  *
  * @author Pan Liuyang
  * 2022/9/30 17:11
@@ -25,7 +25,7 @@ public class ThreadUsage {
     @Test
     public void threadUsage() {
         //使用匿名内部类方式创建线程
-        Thread thread = new Thread() {
+        Thread threadAnonymous = new Thread() {
             @Override
             public void run() {
                 //线程执行的内容
@@ -37,8 +37,8 @@ public class ThreadUsage {
                 log.info("Lambda线程")
         );
         //启动线程
-        thread.setName("Thread-Anonymous");
-        thread.start();
+        threadAnonymous.setName("Thread-Anonymous");
+        threadAnonymous.start();
         threadLambda.setName("Thread-Lambda");
         threadLambda.start();
         ThreadExtends threadExtends = new ThreadExtends();
