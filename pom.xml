@@ -29,6 +29,7 @@
         <slf4j.version>1.7.23</slf4j.version>
         <slf4j.simple.version>2.0.3</slf4j.simple.version>
         <logback.version>1.2.11</logback.version>
+        <jol.version>0.16</jol.version>
     </properties>
 
     <dependencyManagement>
@@ -76,6 +77,14 @@
                 <version>${logback.version}</version>
                 <scope>compile</scope>
             </dependency>
+            <!--Java Object Layout：Java对象内存布局 - 分析JVM中Object布局的小工具-->
+            <dependency>
+                <groupId>org.openjdk.jol</groupId>
+                <artifactId>jol-core</artifactId>
+                <version>${jol.version}</version>
+                <scope>compile</scope>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
