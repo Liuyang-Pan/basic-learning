@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="basic" />
         <module name="concurrent" />
+        <module name="basic-17" />
       </profile>
     </annotationProcessing>
   </component>
