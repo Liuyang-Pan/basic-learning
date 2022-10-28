@@ -1,15 +1,23 @@
 package org.example;
 
+import org.example.designmode.SingletonHungryMan;
+import org.example.designmode.SingletonSluggard;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
-        for (short s = 0; s < 5; s++) {
-            System.out.println("Hello world!");
-        }
-        int i = 1500;
-        byte b = (byte) i;
-        System.out.println(b);
+        singletonHungryManTest();
+        singletonSluggardTest();
+    }
 
-        System.out.println(5 + "a");
+    private static void singletonHungryManTest() {
+        SingletonHungryMan singletonHungryMan = SingletonHungryMan.singletonHungryMan;
+        SingletonHungryMan singletonHungryMan1 = SingletonHungryMan.singletonHungryMan;
+        System.out.println(singletonHungryMan == singletonHungryMan1);
+    }
+
+    private static void singletonSluggardTest() {
+        SingletonSluggard singletonSluggard = SingletonSluggard.getInstance();
+        SingletonSluggard singletonSluggard1 = SingletonSluggard.getInstance();
+        System.out.println(singletonSluggard == singletonSluggard1);
     }
 }
