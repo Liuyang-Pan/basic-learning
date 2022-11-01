@@ -1,9 +1,6 @@
-package org.example;
+package org.example.designmode;
 
-import org.example.designmode.SingletonHungryMan;
-import org.example.designmode.SingletonSluggard;
-
-public class Main {
+public class SingletonTest {
     public static void main(String[] args) {
         singletonHungryManTest();
         singletonSluggardTest();

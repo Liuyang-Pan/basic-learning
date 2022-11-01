@@ -14,7 +14,7 @@ public class InnerClass {
      */
     public class MemberInnerClass {
         //JDK16之前不支持static静态
-        public static String name;
+//        public static String name;
     }
 
     /**
@@ -23,7 +23,7 @@ public class InnerClass {
     public void localClass() {
         class LocalInnerClass {
             //JDK16之前不支持static静态
-            public static String name;
+//            public static String name;
         }
 
         LocalInnerClass localInnerClass = new LocalInnerClass();
