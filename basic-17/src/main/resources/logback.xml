@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false" scan="true" scanPeriod="1 seconds">
+    <contextName>Basic</contextName>
+
+    <!--定义日志路径-->
+    <property name="log.path" value="D:/IdeaProjects/basic-learning/basic-17/src/main/resources/basic.log"/>
+    <!--定义Console控制台日志格式-->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy年MM月dd日 HH:mm:ss.SSS} %contextName [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <!--定义File文件日志格式-->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>%d{yyyy年MM月dd日 HH:mm:ss.SSS} %contextName [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+
+        <file>${log.path}</file>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- 每天一归档 -->
+            <fileNamePattern>mylog-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <!-- 单个日志文件最多 100MB, 60天的日志周期，最大不能超过20GB,窗口大小是1到3，当保存了3个归档文件后，将覆盖最早的日志 -->
+            <maxFileSize>100MB</maxFileSize>
+            <maxHistory>60</maxHistory>
+            <totalSizeCap>20GB</totalSizeCap>
+            <minIndex>1</minIndex>
+            <maxIndex>3</maxIndex>
+        </rollingPolicy>
+    </appender>
+
+    <!--
+    level:用来设置打印级别，大小写无关: TRACE，DEBUG，INFO,WARN,ERROR，ALL 和OFF，DEBUG
+    <root>可以包含零个或多个<appender-ref>元素，标识这个输出位置将会被本日志级别控制。
+    -->
+    <root level="DEBUG">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </root>
+
+    <!--    <logger name="org.example" level="debug"/>-->
+
+</configuration>
