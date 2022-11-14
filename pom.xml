@@ -31,6 +31,7 @@
         <slf4j.simple.version>2.0.3</slf4j.simple.version>
         <logback.version>1.2.11</logback.version>
         <jol.version>0.16</jol.version>
+        <commons-io.version>2.11.0</commons-io.version>
     </properties>
 
     <dependencyManagement>
@@ -85,6 +86,14 @@
                 <version>${jol.version}</version>
                 <scope>compile</scope>
             </dependency>
+            <!-- IO框架 主要有FileUtils和IOUtils https://mvnrepository.com/artifact/commons-io/commons-io -->
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+                <scope>compile</scope>
+            </dependency>
+
 
         </dependencies>
     </dependencyManagement>
