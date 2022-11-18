@@ -7,10 +7,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="basic" />
         <module name="concurrent" />
-        <module name="basic-17" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="basic" target="19" />
+      <module name="micro-services" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

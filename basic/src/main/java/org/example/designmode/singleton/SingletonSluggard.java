@@ -1,4 +1,4 @@
-package org.example.designmode;
+package org.example.designmode.singleton;
 
 /**
  * 懒汉单例模式：在调用getInstance方法时才在堆内存中创建一个实例

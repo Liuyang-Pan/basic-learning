@@ -1,4 +1,4 @@
-package org.example.designmode;
+package org.example.designmode.singleton;
 
 /**
  * 饿汉单例模式：类加载时会先在堆内存中创建一个实例

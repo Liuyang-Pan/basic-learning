@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?><!--文件声明-->
+<!--自定义xml文件学生数据-->
+<!--student根标签只能存在一个-->
+<students>
+    <student id="1">
+        <name>张三</name>
+        <info>
+            <sex>男</sex>
+            <age>20</age>
+            <address>四川省成都市</address>
+        </info>
+        <!--
+        转移字符:
+        &lt; <
+        &gt; >
+        &amp; &
+        &apos; '
+        &quot; "
+        <![CDATA[写什么内容显示什么内容]]>
+        -->
+        <escapecharacter>&lt;&gt;&amp;&apos;&quot;
+            <![CDATA[<<<<&""''&>>>>]]></escapecharacter>
+    </student>
+    <student id="2">
+        <name>李四</name>
+        <info>
+            <sex>男</sex>
+            <age>20</age>
+            <address>四川省成都市</address>
+        </info>
+        <!--
+        转移字符:
+        &lt; <
+        &gt; >
+        &amp; &
+        &apos; '
+        &quot; "
+        <![CDATA[写什么内容显示什么内容]]>
+        -->
+        <escapecharacter>&lt;&gt;&amp;&apos;&quot;
+            <![CDATA[<<<<&""''&>>>>]]></escapecharacter>
+    </student>
+</students>
