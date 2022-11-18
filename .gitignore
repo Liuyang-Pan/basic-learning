@@ -1,3 +1,4 @@
 # Project exclude paths
 /basic/target/
 /concurrent/target/
+/.idea/
