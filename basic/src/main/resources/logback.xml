@@ -3,7 +3,7 @@
     <contextName>Basic</contextName>
 
     <!--定义日志路径-->
-    <property name="log.path" value="D:/IdeaProjects/basic-learning/basic-17/src/main/resources/basic.log"/>
+    <property name="log.path" value="E:/IdeaProject/basic-learning/basic/src/main/resources/basic.log"/>
     <!--定义Console控制台日志格式-->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>

@@ -18,11 +18,11 @@ public class TransformationStream {
         try (
                 //读取的文件转换成对应的编码
                 InputStreamReader inputStreamReader = new InputStreamReader(
-                        new FileInputStream("/IdeaProjects/basic-learning/basic-17/src/main/resources/basic.log"), "UTF-8"
+                        new FileInputStream("/IdeaProjects/basic-learning/basic/src/main/resources/basic.log"), "UTF-8"
                 );
                 //以某种字符流输出
                 OutputStreamWriter outputStreamWriter = new OutputStreamWriter(
-                        new FileOutputStream("/IdeaProjects/basic-learning/basic-17/src/main/resources/write.txt"), "UTF-8"
+                        new FileOutputStream("/IdeaProjects/basic-learning/basic/src/main/resources/write.txt"), "UTF-8"
                 )
         ) {
             int len;

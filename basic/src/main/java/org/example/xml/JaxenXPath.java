@@ -25,7 +25,7 @@ public class JaxenXPath {
         SAXReader saxReader = new SAXReader();
         //读取XML Document文档对象
         try {
-            Document read = saxReader.read(new File("/IDEAProject/basic-learning/basic-17/src/main/resources/xml/xmlFile.xml"));
+            Document read = saxReader.read(new File("/IDEAProject/basic-learning/basic/src/main/resources/xml/xmlFile.xml"));
             List<Node> nodes = read.selectNodes("/students/student/name");
             nodes.forEach(node -> {
                 Element element = (Element) node;
@@ -46,7 +46,7 @@ public class JaxenXPath {
         SAXReader saxReader = new SAXReader();
         //读取XML Document文档对象
         try {
-            Document read = saxReader.read(new File("/IDEAProject/basic-learning/basic-17/src/main/resources/xml/xmlFile.xml"));
+            Document read = saxReader.read(new File("/IDEAProject/basic-learning/basic/src/main/resources/xml/xmlFile.xml"));
             //获取根元素
             Element rootElement = read.getRootElement();
             List<Node> nodes = rootElement.selectNodes("./student/name");
@@ -70,7 +70,7 @@ public class JaxenXPath {
         SAXReader saxReader = new SAXReader();
         //读取XML Document文档对象
         try {
-            Document read = saxReader.read(new File("/IDEAProject/basic-learning/basic-17/src/main/resources/xml/xmlFile.xml"));
+            Document read = saxReader.read(new File("/IDEAProject/basic-learning/basic/src/main/resources/xml/xmlFile.xml"));
             //找所有的name元素
             List<Node> nodes = read.selectNodes("//name");
             nodes.forEach(node -> {
@@ -93,7 +93,7 @@ public class JaxenXPath {
         SAXReader saxReader = new SAXReader();
         //读取XML Document文档对象
         try {
-            Document read = saxReader.read(new File("/IDEAProject/basic-learning/basic-17/src/main/resources/xml/xmlFile.xml"));
+            Document read = saxReader.read(new File("/IDEAProject/basic-learning/basic/src/main/resources/xml/xmlFile.xml"));
             //有id属性的属性对象
             List<Node> attributes = read.selectNodes("//@id");
             attributes.forEach(node -> {

@@ -12,7 +12,7 @@ public class FileUsage {
     public static void main(String[] args) throws IOException {
         log.info("开始读取文件...");
         //可以是绝对路径也可以是相对路径，相对路径默认路径是当前工程路径，也可以获取文件夹
-        File file = new File("/IdeaProjects/basic-learning/basic-17/src/main/resources/basic.log");
+        File file = new File("/IdeaProjects/basic-learning/basic/src/main/resources/basic.log");
         //返回字节(byte)数
         long length = file.length();
         log.info("文件大小:" + length + "B");
@@ -26,14 +26,14 @@ public class FileUsage {
 
 
         //public boolean createNewFile() 创建一个新的空的文件
-        File createFile = new File("/IdeaProjects/basic-learning/basic-17/src/main/resources/basicFile.txt");
+        File createFile = new File("/IdeaProjects/basic-learning/basic/src/main/resources/basicFile.txt");
         boolean newFile = createFile.createNewFile();
         log.info(newFile ? "文件创建成功" : "文件可能已经存在，创建失败");
         //public boolean mkdir() 只能创建一级文件夹
-        File mkdirFile = new File("/IdeaProjects/basic-learning/basic-17/src/main/resources/mkdirFile");
+        File mkdirFile = new File("/IdeaProjects/basic-learning/basic/src/main/resources/mkdirFile");
         log.info(mkdirFile.mkdir() ? "文件夹创建成功" : "文件夹创建失败");
         //public boolean mkdirs() 可以创建多级文件夹
-        File mkdirsFile = new File("/IdeaProjects/basic-learning/basic-17/src/main/resources/mkdirsFile/mkdir/file");
+        File mkdirsFile = new File("/IdeaProjects/basic-learning/basic/src/main/resources/mkdirsFile/mkdir/file");
         log.info(mkdirsFile.mkdirs() ? "文件夹创建成功" : "文件夹创建失败");
         //public boolean delete() 删除由此抽象路径名表示的文件或空文件夹
         //delete方法直接删除不走回收站,delete方法默认只能删除空文件夹。
@@ -41,7 +41,7 @@ public class FileUsage {
         log.info(mkdirFile.delete() ? "创建的文件夹删除成功" : "创建的文件夹删除失败");
 
         //无文件列表会返回空数组 若是路径是文件会返回空对象null
-        File fileList = new File("/IdeaProjects/basic-learning/basic-17/src/main/resources");
+        File fileList = new File("/IdeaProjects/basic-learning/basic/src/main/resources");
         log.info("当前文件夹的文件和文件夹列表:" + Arrays.toString(fileList.list()));
         log.info("当前文件夹的文件和文件夹File列表" + Arrays.toString(fileList.listFiles()));
     }

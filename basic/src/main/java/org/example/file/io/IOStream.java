@@ -14,8 +14,8 @@ public class IOStream {
         try {
             fileOutputStreamMethod();
             fileInputStreamMethodOne();
-            fileCopy("/IdeaProjects/basic-learning/basic-17/src/main/resources/write.txt",
-                    "/IdeaProjects/basic-learning/basic-17/src/main/resources/write2.txt",
+            fileCopy("/IdeaProjects/basic-learning/basic/src/main/resources/write.txt",
+                    "/IdeaProjects/basic-learning/basic/src/main/resources/write2.txt",
                     false);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -78,7 +78,7 @@ public class IOStream {
     public static void fileOutputStreamMethod() throws IOException {
         {
             //默认会将文件内容清空再重新写入，带上append的true参数可追加
-            OutputStream outputStream = new FileOutputStream("/IdeaProjects/basic-learning/basic-17/src/main/resources/write.txt", true);
+            OutputStream outputStream = new FileOutputStream("/IdeaProjects/basic-learning/basic/src/main/resources/write.txt", true);
             outputStream.write('a');
             //刷新流，写入立即生效
             outputStream.flush();
@@ -91,7 +91,7 @@ public class IOStream {
 
     public static void fileInputStreamMethodOne() throws IOException {
         {
-            InputStream inputStream = new FileInputStream("/IdeaProjects/basic-learning/basic-17/src/main/resources/basic.log");
+            InputStream inputStream = new FileInputStream("/IdeaProjects/basic-learning/basic/src/main/resources/basic.log");
             //read()每次读取一个字节返回,读取完返回-1
             int readByte;
             while ((readByte = inputStream.read()) != -1) {
@@ -102,7 +102,7 @@ public class IOStream {
         }
 
         {
-            InputStream inputStreamTwo = new FileInputStream("/IdeaProjects/basic-learning/basic-17/src/main/resources/basic.log");
+            InputStream inputStreamTwo = new FileInputStream("/IdeaProjects/basic-learning/basic/src/main/resources/basic.log");
             byte[] bytes = new byte[1024];
             //每次读取1024个字节放入bytes中,若是文件内的字节小于当前缓存的大小会从前面填充并保留上次的在数组后
             int read;
@@ -113,7 +113,7 @@ public class IOStream {
         }
 
         {
-            File file = new File("/IdeaProjects/basic-learning/basic-17/src/main/resources/basic.log");
+            File file = new File("/IdeaProjects/basic-learning/basic/src/main/resources/basic.log");
             InputStream inputStreamMax = new FileInputStream(file);
             //一次性读取全部字节流，文件过大可能会引起内存溢出异常
             byte[] byteMax = new byte[(int) file.length()];
@@ -136,7 +136,7 @@ class CharacterIOStream {
         {
             try (
                     //字符输入流
-                    Reader reader = new FileReader("/IdeaProjects/basic-learning/basic-17/src/main/resources/basic.log")
+                    Reader reader = new FileReader("/IdeaProjects/basic-learning/basic/src/main/resources/basic.log")
             ) {
                 Date start = new Date();
                 //每次读取一个字符，读取完返回-1
@@ -155,7 +155,7 @@ class CharacterIOStream {
         {
             try (
                     //字符输入流
-                    Reader reader = new FileReader("/IdeaProjects/basic-learning/basic-17/src/main/resources/basic.log")
+                    Reader reader = new FileReader("/IdeaProjects/basic-learning/basic/src/main/resources/basic.log")
             ) {
                 Date start = new Date();
                 char[] chars = new char[1024];
@@ -175,7 +175,7 @@ class CharacterIOStream {
     public static void fileWriter() {
         {
             try (
-                    Writer writer = new FileWriter("/IdeaProjects/basic-learning/basic-17/src/main/resources/write.txt", true)
+                    Writer writer = new FileWriter("/IdeaProjects/basic-learning/basic/src/main/resources/write.txt", true)
             ) {
                 writer.write("测试\r\n");
                 writer.flush();

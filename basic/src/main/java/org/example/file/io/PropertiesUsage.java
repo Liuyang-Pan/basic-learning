@@ -14,9 +14,9 @@ public class PropertiesUsage {
         properties.setProperty("user", "value");
 
         properties.store(
-                new PrintWriter("/IdeaProjects/basic-learning/basic-17/src/main/resources/Properties.properties", StandardCharsets.UTF_8),
+                new PrintWriter("/IdeaProjects/basic-learning/basic/src/main/resources/Properties.properties", StandardCharsets.UTF_8),
                 "增加一个注释");
-        properties.load(new FileInputStream("/IdeaProjects/basic-learning/basic-17/src/main/resources/Properties.properties"));
+        properties.load(new FileInputStream("/IdeaProjects/basic-learning/basic/src/main/resources/Properties.properties"));
         System.out.println(properties);
         System.out.println(properties.getProperty("admin"));
     }

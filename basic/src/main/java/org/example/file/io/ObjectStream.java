@@ -15,11 +15,11 @@ public class ObjectStream {
     public static void main(String[] args) {
         try (
                 ObjectOutputStream outputStream = new ObjectOutputStream(
-                        new FileOutputStream("/IdeaProjects/basic-learning/basic-17/src/main/resources/ObjectOutputStream.txt")
+                        new FileOutputStream("/IdeaProjects/basic-learning/basic/src/main/resources/ObjectOutputStream.txt")
                 );
 
                 ObjectInputStream inputStream = new ObjectInputStream(
-                        new FileInputStream("/IdeaProjects/basic-learning/basic-17/src/main/resources/ObjectOutputStream.txt")
+                        new FileInputStream("/IdeaProjects/basic-learning/basic/src/main/resources/ObjectOutputStream.txt")
                 )
         ) {
             //以Java的Serial(序列化)方式存入到文件中

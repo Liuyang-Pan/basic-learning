@@ -13,9 +13,9 @@ import java.io.PrintWriter;
 public class PrintStreamUsage {
     public static void main(String[] args) {
         try (
-                PrintStream printStream = new PrintStream(new FileOutputStream("/IdeaProjects/basic-learning/basic-17/src/main/resources/PrintStream.txt", true));
+                PrintStream printStream = new PrintStream(new FileOutputStream("/IdeaProjects/basic-learning/basic/src/main/resources/PrintStream.txt", true));
 
-                PrintWriter printWriter = new PrintWriter(new FileOutputStream("/IdeaProjects/basic-learning/basic-17/src/main/resources/PrintStream.txt", true));
+                PrintWriter printWriter = new PrintWriter(new FileOutputStream("/IdeaProjects/basic-learning/basic/src/main/resources/PrintStream.txt", true));
         ) {
             //系统的打印流改成文件流打印到文件中
             System.setOut(printStream);

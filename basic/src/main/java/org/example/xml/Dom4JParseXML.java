@@ -22,7 +22,7 @@ public class Dom4JParseXML {
         SAXReader saxReader = new SAXReader();
         try {
             //读取XML Document文档对象
-            Document read = saxReader.read(new File("/IDEAProject/basic-learning/basic-17/src/main/resources/xml/xmlFile.xml"));
+            Document read = saxReader.read(new File("/IDEAProject/basic-learning/basic/src/main/resources/xml/xmlFile.xml"));
             //获取根元素对象
             Element rootElement = read.getRootElement();
             System.out.println("rootElement.getName() = " + rootElement.getName());

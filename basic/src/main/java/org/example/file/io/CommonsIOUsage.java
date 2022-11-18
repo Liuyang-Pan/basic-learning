@@ -18,17 +18,17 @@ import java.nio.file.Path;
 public class CommonsIOUsage {
     public static void main(String[] args) {
         try (
-                FileInputStream fileInputStream = new FileInputStream("basic-17/src/main/resources/logback.xml");
-                FileOutputStream fileOutputStream = new FileOutputStream("basic-17/src/main/resources/copy/logback.xml")
+                FileInputStream fileInputStream = new FileInputStream("basic/src/main/resources/logback.xml");
+                FileOutputStream fileOutputStream = new FileOutputStream("basic/src/main/resources/copy/logback.xml")
         ) {
             //文件复制
             IOUtils.copy(fileInputStream, fileOutputStream);
             //文件复制到文件夹
-            FileUtils.copyFileToDirectory(new File("basic-17/src/main/resources/logback.xml"), new File("basic-17/src/main/resources/fileCopy"));
+            FileUtils.copyFileToDirectory(new File("basic/src/main/resources/logback.xml"), new File("basic/src/main/resources/fileCopy"));
             //文件夹复制到文件夹
-            FileUtils.copyDirectoryToDirectory(new File("basic-17/src/main/resources"), new File("basic-17/src/main/resources/directory"));
+            FileUtils.copyDirectoryToDirectory(new File("basic/src/main/resources"), new File("basic/src/main/resources/directory"));
             //NIO
-//            Files.copy(Path.of("E:\\IDEAProject\\basic-learning\\basic-17\\src\\main\\resources/logback.xml"), Path.of("E:\\IDEAProject\\basic-learning\\basic-17\\src\\main\\resources\\copy/logback.xml"));
+//            Files.copy(Path.of("E:\\IDEAProject\\basic-learning\\basic\\src\\main\\resources/logback.xml"), Path.of("E:\\IDEAProject\\basic-learning\\basic\\src\\main\\resources\\copy/logback.xml"));
         } catch (Exception e) {
             e.printStackTrace();
         }

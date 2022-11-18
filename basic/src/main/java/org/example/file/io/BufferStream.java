@@ -18,11 +18,11 @@ public class BufferStream {
         try (
                 //输入流
                 BufferedInputStream bufferedInputStream = new BufferedInputStream(
-                        new FileInputStream("/IdeaProjects/basic-learning/basic-17/src/main/resources/basic.log")
+                        new FileInputStream("/IdeaProjects/basic-learning/basic/src/main/resources/basic.log")
                 );
                 //输出流
                 BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(
-                        new FileOutputStream("/IdeaProjects/basic-learning/basic-17/src/main/resources/write.txt")
+                        new FileOutputStream("/IdeaProjects/basic-learning/basic/src/main/resources/write.txt")
                 )
         ) {
             byte[] bytes = new byte[1024];
@@ -41,11 +41,11 @@ public class BufferStream {
         try (
                 //输入流
                 BufferedReader bufferedReader = new BufferedReader(
-                        new FileReader("/IdeaProjects/basic-learning/basic-17/src/main/resources/basic.log")
+                        new FileReader("/IdeaProjects/basic-learning/basic/src/main/resources/basic.log")
                 );
                 //输出流
                 BufferedWriter bufferedWriter = new BufferedWriter(
-                        new FileWriter("/IdeaProjects/basic-learning/basic-17/src/main/resources/write.txt")
+                        new FileWriter("/IdeaProjects/basic-learning/basic/src/main/resources/write.txt")
                 )
         ) {
             String readLine;
